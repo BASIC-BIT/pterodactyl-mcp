@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "scope": {
+    "include": ["**/*"],
+    "exclude": [
+      "**/{node_modules,dist,coverage,.cache,.superpowers}/**",
+      "**/generated/**",
+      "**/*.d.{ts,mts,cts}",
+      "**/package-lock.json",
+      "spec/upstream/**"
+    ]
+  },
+  "checks": {
+    "complexity": {
+      "mode": "ratchet",
+      "cyclomatic": 15,
+      "cognitive": 15,
+      "include": ["**/*.{js,mjs,ts,mts}"]
+    },
+    "fileSize": { "mode": "ratchet", "maxLines": 1000, "include": ["**/*.{js,mjs,ts,mts}"] },
+    "duplication": {
+      "mode": "ratchet",
+      "minLines": 8,
+      "minTokens": 50,
+      "include": ["**/*.{js,mjs,ts,mts}"],
+      "formats": ["javascript", "typescript"]
+    }
+  },
+  "overrides": [],
+  "reports": { "testDebt": true, "testSize": { "enabled": true, "oversizedLines": 1000 } }
+}
