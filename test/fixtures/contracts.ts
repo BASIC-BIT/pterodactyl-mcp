@@ -230,8 +230,10 @@ export const mutationContracts = [
         minute: '0',
         hour: '3',
         day_of_month: '*',
+        month: '*',
         day_of_week: '*',
         is_active: false,
+        only_when_online: true,
       },
     },
   ],
@@ -297,8 +299,10 @@ const scheduleBody = {
   minute: '0',
   hour: '3',
   day_of_month: '*',
+  month: '*',
   day_of_week: '*',
   is_active: false,
+  only_when_online: true,
 };
 export const otherContracts = [
   ['application.users.list', 'GET', '/api/application/users', {}],

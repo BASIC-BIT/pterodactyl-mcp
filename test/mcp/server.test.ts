@@ -3,6 +3,8 @@ import { Client, InMemoryTransport } from '@modelcontextprotocol/client';
 import { afterEach, describe, expect, it } from 'vitest';
 import { createServer } from '../../src/mcp/server.js';
 import { loadConfig } from '../../src/config.js';
+import * as z from 'zod/v4';
+import { mutationContracts } from '../fixtures/contracts.js';
 
 const cleanups: (() => Promise<void>)[] = [];
 const powerArguments = {
@@ -73,6 +75,35 @@ async function fixture(allowWrites = false) {
 }
 
 describe('actual MCP SDK client/server', () => {
+  it.each([
+    ['application.servers.create', ['environment']],
+    ['application.servers.startup', ['environment']],
+    ['application.users.create', ['password']],
+  ])('advertises usable, complete input schemas for %s', async (operationId, properties) => {
+    const { client } = await fixture();
+    const response = await client.callTool({
+      name: 'ptero_operation_details',
+      arguments: { operationId },
+    });
+    const parsed = z
+      .object({ result: z.object({ inputSchema: z.record(z.string(), z.unknown()) }) })
+      .parse(response.structuredContent);
+    const schema = parsed.result.inputSchema;
+    const body = z
+      .object({
+        properties: z.object({
+          body: z.object({
+            properties: z.record(z.string(), z.unknown()),
+            required: z.array(z.string()),
+          }),
+        }),
+      })
+      .parse(schema).properties.body;
+    for (const property of properties) expect(body.properties).toHaveProperty(property);
+    for (const property of body.required) expect(body.properties).toHaveProperty(property);
+    const contract = mutationContracts.find((row) => row[0] === operationId)!;
+    expect(z.fromJSONSchema(schema).safeParse(contract[3]).success).toBe(true);
+  });
   it('discovers separate read and mutation tools with accurate annotations', async () => {
     const { client, requests } = await fixture();
     const result = await client.listTools();

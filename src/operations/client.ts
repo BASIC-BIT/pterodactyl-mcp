@@ -15,8 +15,10 @@ const schedule = z
     minute: text,
     hour: text,
     day_of_month: text,
+    month: text,
     day_of_week: text,
     is_active: z.boolean().optional(),
+    only_when_online: z.boolean().optional(),
   })
   .strict();
 const taskOptions = {

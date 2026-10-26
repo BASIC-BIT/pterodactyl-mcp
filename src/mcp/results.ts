@@ -14,8 +14,12 @@ function safeValue(value: unknown): unknown {
   );
 }
 
-export function toolResult(panel: string, result: unknown) {
-  const structuredContent = { panel, result: safeValue(result) };
+export function toolResult(
+  panel: string,
+  result: unknown,
+  source: 'provider' | 'catalogue' = 'provider',
+) {
+  const structuredContent = { panel, result: source === 'catalogue' ? result : safeValue(result) };
   const text = JSON.stringify(structuredContent);
   if (Buffer.byteLength(text) > 64 * 1024)
     return toolFailure(panel, new PanelError('result_too_large'));

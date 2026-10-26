@@ -9,6 +9,31 @@ import {
 } from '../fixtures/contracts.js';
 
 describe('provider input contracts', () => {
+  it('preserves all five cron fields and online policy for create and update', () => {
+    const body = {
+      name: 'Nightly',
+      minute: '0',
+      hour: '3',
+      day_of_month: '*',
+      month: '*',
+      day_of_week: '*',
+      is_active: false,
+      only_when_online: true,
+    };
+    for (const operation of ['create', 'update']) {
+      expect(
+        prepareOperation(`client.schedules.${operation}`, {
+          path: operation === 'create' ? clientServer : { ...clientServer, schedule: 2 },
+          body,
+        }).body,
+      ).toEqual(body);
+    }
+    const { month: _month, ...incomplete } = body;
+    expect(_month).toBe('*');
+    expect(() =>
+      prepareOperation('client.schedules.create', { path: clientServer, body: incomplete }),
+    ).toThrow();
+  });
   it.each(contracts)(
     '%s prepares the independently specified method, path and body',
     (id, method, path, input) => {

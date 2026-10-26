@@ -47,6 +47,7 @@ export function createServer(config: PanelConfig, options: ClientOptions = {}): 
           path,
           status,
         })),
+        'catalogue',
       ),
   );
   server.registerTool(
@@ -59,7 +60,7 @@ export function createServer(config: PanelConfig, options: ClientOptions = {}): 
     },
     async ({ operationId }) => {
       try {
-        return toolResult(config.label, operationDetails(operationId));
+        return toolResult(config.label, operationDetails(operationId), 'catalogue');
       } catch (error) {
         return toolFailure(config.label, error);
       }
