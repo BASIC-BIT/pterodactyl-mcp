@@ -1,0 +1,9 @@
+node_modules/
+dist/
+coverage/
+package-lock.json
+.cache/
+.superpowers/
+spec/upstream/
+src/generated/
+docs/coverage.md
