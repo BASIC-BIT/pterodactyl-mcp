@@ -1,0 +1,557 @@
+[
+  {
+    "family": "application",
+    "method": "GET",
+    "path": "/api/application/users"
+  },
+  {
+    "family": "application",
+    "method": "GET",
+    "path": "/api/application/users/{user}"
+  },
+  {
+    "family": "application",
+    "method": "GET",
+    "path": "/api/application/users/external/{external_id}"
+  },
+  {
+    "family": "application",
+    "method": "POST",
+    "path": "/api/application/users"
+  },
+  {
+    "family": "application",
+    "method": "PATCH",
+    "path": "/api/application/users/{user}"
+  },
+  {
+    "family": "application",
+    "method": "DELETE",
+    "path": "/api/application/users/{user}"
+  },
+  {
+    "family": "application",
+    "method": "GET",
+    "path": "/api/application/nodes"
+  },
+  {
+    "family": "application",
+    "method": "GET",
+    "path": "/api/application/nodes/deployable"
+  },
+  {
+    "family": "application",
+    "method": "GET",
+    "path": "/api/application/nodes/{node}"
+  },
+  {
+    "family": "application",
+    "method": "GET",
+    "path": "/api/application/nodes/{node}/configuration"
+  },
+  {
+    "family": "application",
+    "method": "POST",
+    "path": "/api/application/nodes"
+  },
+  {
+    "family": "application",
+    "method": "PATCH",
+    "path": "/api/application/nodes/{node}"
+  },
+  {
+    "family": "application",
+    "method": "DELETE",
+    "path": "/api/application/nodes/{node}"
+  },
+  {
+    "family": "application",
+    "method": "GET",
+    "path": "/api/application/nodes/{node}/allocations"
+  },
+  {
+    "family": "application",
+    "method": "POST",
+    "path": "/api/application/nodes/{node}/allocations"
+  },
+  {
+    "family": "application",
+    "method": "DELETE",
+    "path": "/api/application/nodes/{node}/allocations/{allocation}"
+  },
+  {
+    "family": "application",
+    "method": "GET",
+    "path": "/api/application/locations"
+  },
+  {
+    "family": "application",
+    "method": "GET",
+    "path": "/api/application/locations/{location}"
+  },
+  {
+    "family": "application",
+    "method": "POST",
+    "path": "/api/application/locations"
+  },
+  {
+    "family": "application",
+    "method": "PATCH",
+    "path": "/api/application/locations/{location}"
+  },
+  {
+    "family": "application",
+    "method": "DELETE",
+    "path": "/api/application/locations/{location}"
+  },
+  {
+    "family": "application",
+    "method": "GET",
+    "path": "/api/application/servers"
+  },
+  {
+    "family": "application",
+    "method": "GET",
+    "path": "/api/application/servers/{server}"
+  },
+  {
+    "family": "application",
+    "method": "GET",
+    "path": "/api/application/servers/external/{external_id}"
+  },
+  {
+    "family": "application",
+    "method": "PATCH",
+    "path": "/api/application/servers/{server}/details"
+  },
+  {
+    "family": "application",
+    "method": "PATCH",
+    "path": "/api/application/servers/{server}/build"
+  },
+  {
+    "family": "application",
+    "method": "PATCH",
+    "path": "/api/application/servers/{server}/startup"
+  },
+  {
+    "family": "application",
+    "method": "POST",
+    "path": "/api/application/servers"
+  },
+  {
+    "family": "application",
+    "method": "POST",
+    "path": "/api/application/servers/{server}/suspend"
+  },
+  {
+    "family": "application",
+    "method": "POST",
+    "path": "/api/application/servers/{server}/unsuspend"
+  },
+  {
+    "family": "application",
+    "method": "POST",
+    "path": "/api/application/servers/{server}/reinstall"
+  },
+  {
+    "family": "application",
+    "method": "DELETE",
+    "path": "/api/application/servers/{server}"
+  },
+  {
+    "family": "application",
+    "method": "DELETE",
+    "path": "/api/application/servers/{server}/{force?}"
+  },
+  {
+    "family": "application",
+    "method": "GET",
+    "path": "/api/application/servers/{server}/databases"
+  },
+  {
+    "family": "application",
+    "method": "GET",
+    "path": "/api/application/servers/{server}/databases/{database}"
+  },
+  {
+    "family": "application",
+    "method": "POST",
+    "path": "/api/application/servers/{server}/databases"
+  },
+  {
+    "family": "application",
+    "method": "POST",
+    "path": "/api/application/servers/{server}/databases/{database}/reset-password"
+  },
+  {
+    "family": "application",
+    "method": "DELETE",
+    "path": "/api/application/servers/{server}/databases/{database}"
+  },
+  {
+    "family": "application",
+    "method": "GET",
+    "path": "/api/application/nests"
+  },
+  {
+    "family": "application",
+    "method": "GET",
+    "path": "/api/application/nests/{nest}"
+  },
+  {
+    "family": "application",
+    "method": "GET",
+    "path": "/api/application/nests/{nest}/eggs"
+  },
+  {
+    "family": "application",
+    "method": "GET",
+    "path": "/api/application/nests/{nest}/eggs/{egg}"
+  },
+  {
+    "family": "client",
+    "method": "GET",
+    "path": "/api/client"
+  },
+  {
+    "family": "client",
+    "method": "GET",
+    "path": "/api/client/permissions"
+  },
+  {
+    "family": "client",
+    "method": "GET",
+    "path": "/api/client/account"
+  },
+  {
+    "family": "client",
+    "method": "GET",
+    "path": "/api/client/account/two-factor"
+  },
+  {
+    "family": "client",
+    "method": "POST",
+    "path": "/api/client/account/two-factor"
+  },
+  {
+    "family": "client",
+    "method": "POST",
+    "path": "/api/client/account/two-factor/disable"
+  },
+  {
+    "family": "client",
+    "method": "PUT",
+    "path": "/api/client/account/email"
+  },
+  {
+    "family": "client",
+    "method": "PUT",
+    "path": "/api/client/account/password"
+  },
+  {
+    "family": "client",
+    "method": "GET",
+    "path": "/api/client/account/activity"
+  },
+  {
+    "family": "client",
+    "method": "GET",
+    "path": "/api/client/account/api-keys"
+  },
+  {
+    "family": "client",
+    "method": "POST",
+    "path": "/api/client/account/api-keys"
+  },
+  {
+    "family": "client",
+    "method": "DELETE",
+    "path": "/api/client/account/api-keys/{identifier}"
+  },
+  {
+    "family": "client",
+    "method": "GET",
+    "path": "/api/client/account/ssh-keys"
+  },
+  {
+    "family": "client",
+    "method": "POST",
+    "path": "/api/client/account/ssh-keys"
+  },
+  {
+    "family": "client",
+    "method": "POST",
+    "path": "/api/client/account/ssh-keys/remove"
+  },
+  {
+    "family": "client",
+    "method": "GET",
+    "path": "/api/client/servers/{server}"
+  },
+  {
+    "family": "client",
+    "method": "GET",
+    "path": "/api/client/servers/{server}/websocket"
+  },
+  {
+    "family": "client",
+    "method": "GET",
+    "path": "/api/client/servers/{server}/resources"
+  },
+  {
+    "family": "client",
+    "method": "GET",
+    "path": "/api/client/servers/{server}/activity"
+  },
+  {
+    "family": "client",
+    "method": "POST",
+    "path": "/api/client/servers/{server}/command"
+  },
+  {
+    "family": "client",
+    "method": "POST",
+    "path": "/api/client/servers/{server}/power"
+  },
+  {
+    "family": "client",
+    "method": "GET",
+    "path": "/api/client/servers/{server}/databases"
+  },
+  {
+    "family": "client",
+    "method": "POST",
+    "path": "/api/client/servers/{server}/databases"
+  },
+  {
+    "family": "client",
+    "method": "POST",
+    "path": "/api/client/servers/{server}/databases/{database}/rotate-password"
+  },
+  {
+    "family": "client",
+    "method": "DELETE",
+    "path": "/api/client/servers/{server}/databases/{database}"
+  },
+  {
+    "family": "client",
+    "method": "GET",
+    "path": "/api/client/servers/{server}/files/list"
+  },
+  {
+    "family": "client",
+    "method": "GET",
+    "path": "/api/client/servers/{server}/files/contents"
+  },
+  {
+    "family": "client",
+    "method": "GET",
+    "path": "/api/client/servers/{server}/files/download"
+  },
+  {
+    "family": "client",
+    "method": "PUT",
+    "path": "/api/client/servers/{server}/files/rename"
+  },
+  {
+    "family": "client",
+    "method": "POST",
+    "path": "/api/client/servers/{server}/files/copy"
+  },
+  {
+    "family": "client",
+    "method": "POST",
+    "path": "/api/client/servers/{server}/files/write"
+  },
+  {
+    "family": "client",
+    "method": "POST",
+    "path": "/api/client/servers/{server}/files/compress"
+  },
+  {
+    "family": "client",
+    "method": "POST",
+    "path": "/api/client/servers/{server}/files/decompress"
+  },
+  {
+    "family": "client",
+    "method": "POST",
+    "path": "/api/client/servers/{server}/files/delete"
+  },
+  {
+    "family": "client",
+    "method": "POST",
+    "path": "/api/client/servers/{server}/files/create-folder"
+  },
+  {
+    "family": "client",
+    "method": "POST",
+    "path": "/api/client/servers/{server}/files/chmod"
+  },
+  {
+    "family": "client",
+    "method": "POST",
+    "path": "/api/client/servers/{server}/files/pull"
+  },
+  {
+    "family": "client",
+    "method": "GET",
+    "path": "/api/client/servers/{server}/files/upload"
+  },
+  {
+    "family": "client",
+    "method": "GET",
+    "path": "/api/client/servers/{server}/schedules"
+  },
+  {
+    "family": "client",
+    "method": "POST",
+    "path": "/api/client/servers/{server}/schedules"
+  },
+  {
+    "family": "client",
+    "method": "GET",
+    "path": "/api/client/servers/{server}/schedules/{schedule}"
+  },
+  {
+    "family": "client",
+    "method": "POST",
+    "path": "/api/client/servers/{server}/schedules/{schedule}"
+  },
+  {
+    "family": "client",
+    "method": "POST",
+    "path": "/api/client/servers/{server}/schedules/{schedule}/execute"
+  },
+  {
+    "family": "client",
+    "method": "DELETE",
+    "path": "/api/client/servers/{server}/schedules/{schedule}"
+  },
+  {
+    "family": "client",
+    "method": "POST",
+    "path": "/api/client/servers/{server}/schedules/{schedule}/tasks"
+  },
+  {
+    "family": "client",
+    "method": "POST",
+    "path": "/api/client/servers/{server}/schedules/{schedule}/tasks/{task}"
+  },
+  {
+    "family": "client",
+    "method": "DELETE",
+    "path": "/api/client/servers/{server}/schedules/{schedule}/tasks/{task}"
+  },
+  {
+    "family": "client",
+    "method": "GET",
+    "path": "/api/client/servers/{server}/network/allocations"
+  },
+  {
+    "family": "client",
+    "method": "POST",
+    "path": "/api/client/servers/{server}/network/allocations"
+  },
+  {
+    "family": "client",
+    "method": "POST",
+    "path": "/api/client/servers/{server}/network/allocations/{allocation}"
+  },
+  {
+    "family": "client",
+    "method": "POST",
+    "path": "/api/client/servers/{server}/network/allocations/{allocation}/primary"
+  },
+  {
+    "family": "client",
+    "method": "DELETE",
+    "path": "/api/client/servers/{server}/network/allocations/{allocation}"
+  },
+  {
+    "family": "client",
+    "method": "GET",
+    "path": "/api/client/servers/{server}/users"
+  },
+  {
+    "family": "client",
+    "method": "POST",
+    "path": "/api/client/servers/{server}/users"
+  },
+  {
+    "family": "client",
+    "method": "GET",
+    "path": "/api/client/servers/{server}/users/{user}"
+  },
+  {
+    "family": "client",
+    "method": "POST",
+    "path": "/api/client/servers/{server}/users/{user}"
+  },
+  {
+    "family": "client",
+    "method": "DELETE",
+    "path": "/api/client/servers/{server}/users/{user}"
+  },
+  {
+    "family": "client",
+    "method": "GET",
+    "path": "/api/client/servers/{server}/backups"
+  },
+  {
+    "family": "client",
+    "method": "POST",
+    "path": "/api/client/servers/{server}/backups"
+  },
+  {
+    "family": "client",
+    "method": "GET",
+    "path": "/api/client/servers/{server}/backups/{backup}"
+  },
+  {
+    "family": "client",
+    "method": "GET",
+    "path": "/api/client/servers/{server}/backups/{backup}/download"
+  },
+  {
+    "family": "client",
+    "method": "POST",
+    "path": "/api/client/servers/{server}/backups/{backup}/lock"
+  },
+  {
+    "family": "client",
+    "method": "POST",
+    "path": "/api/client/servers/{server}/backups/{backup}/restore"
+  },
+  {
+    "family": "client",
+    "method": "DELETE",
+    "path": "/api/client/servers/{server}/backups/{backup}"
+  },
+  {
+    "family": "client",
+    "method": "GET",
+    "path": "/api/client/servers/{server}/startup"
+  },
+  {
+    "family": "client",
+    "method": "PUT",
+    "path": "/api/client/servers/{server}/startup/variable"
+  },
+  {
+    "family": "client",
+    "method": "POST",
+    "path": "/api/client/servers/{server}/settings/rename"
+  },
+  {
+    "family": "client",
+    "method": "POST",
+    "path": "/api/client/servers/{server}/settings/reinstall"
+  },
+  {
+    "family": "client",
+    "method": "PUT",
+    "path": "/api/client/servers/{server}/settings/docker-image"
+  }
+]

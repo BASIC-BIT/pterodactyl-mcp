@@ -1,0 +1,55 @@
+{
+  "name": "@basicbit/pterodactyl-mcp",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Self-hosted MCP tools for Pterodactyl Application and Client APIs",
+  "type": "module",
+  "license": "MIT",
+  "engines": {
+    "node": ">=24.22.1 <25"
+  },
+  "bin": {
+    "pterodactyl-mcp": "dist/index.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "docs/coverage.md"
+  ],
+  "scripts": {
+    "generate:routes": "node scripts/generate-provider-routes.mjs",
+    "check:routes": "node scripts/generate-provider-routes.mjs --check",
+    "generate:coverage": "npm run build && node scripts/coverage-matrix.mjs",
+    "check:coverage": "node scripts/coverage-matrix.mjs --check",
+    "smoke:package": "npm run build && node scripts/package-smoke.mjs",
+    "build": "tsc -p tsconfig.build.json",
+    "typecheck": "tsc --noEmit",
+    "pretest": "npm run build",
+    "test": "vitest run",
+    "test:coverage": "vitest run --coverage",
+    "lint": "eslint . --max-warnings=0",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "check": "npm run format:check && npm run lint && npm run typecheck && npm run check:routes && npm run build && npm run check:coverage && npm run test:coverage",
+    "start": "node dist/index.js"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/server": "2.3.1",
+    "ws": "8.22.0",
+    "zod": "4.6.7"
+  },
+  "devDependencies": {
+    "@eslint/js": "10.0.1",
+    "@modelcontextprotocol/client": "2.3.1",
+    "@types/node": "24.10.0",
+    "@types/ws": "8.18.2",
+    "@vitest/coverage-v8": "5.0.5",
+    "eslint": "10.3.0",
+    "php-parser": "3.7.0",
+    "prettier": "3.7.4",
+    "typescript": "6.0.3",
+    "typescript-eslint": "8.72.0",
+    "vitest": "5.0.5"
+  }
+}

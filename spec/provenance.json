@@ -1,0 +1,7 @@
+{
+  "repository": "https://github.com/pterodactyl/panel",
+  "revision": "90b2aa87469da4fffd941b3c99f3c1ca48a01b78",
+  "files": ["routes/api-application.php", "routes/api-client.php"],
+  "license": "upstream/LICENSE.md",
+  "scope": "Pinned upstream API route evidence. Actual deployed panel versions remain unverified."
+}
